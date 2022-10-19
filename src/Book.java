@@ -4,9 +4,23 @@ import java.util.List;
 public class Book {
 
     String title;
-    List<String> image = new ArrayList<>();
-    List<String> table = new ArrayList<>();
-    List<String> paragraph = new ArrayList<>();
+
+    private List<Chapter> chapterList=new ArrayList<>();
+
+    private Author author;
+
+    public void addAuthor(Author author) {
+        this.author = author;
+    }
+
+    public int createChapter(String chapterName) {
+        this.chapterList.add(new Chapter(chapterName));
+        return chapterList.size();
+    }
+
+    public Chapter getChapter(int position) {
+        return chapterList.get(position-1);
+    }
 
     public Book(String title) {
         this.title = title;
@@ -16,19 +30,9 @@ public class Book {
         this.title = title;
     }
 
-    public void createNewImage(String image) {
-        this.image.add(image);
-    }
 
-    public void createNewTable(String table) {
-        this.table.add(table);
-    }
-
-    public void createNewParagraph(String paragraph) {
-        this.paragraph.add(paragraph);
-    }
 
     public void print() {
-        System.out.println("Title: " + this.title + "\nPararaphs: " + this.paragraph + "\nImage: " + this.image );
+        System.out.println( this.title);
     }
 }
