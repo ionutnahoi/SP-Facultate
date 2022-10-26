@@ -1,11 +1,11 @@
-public class Paragraph {
+public class Paragraph implements Element{
     private String text;
 
-    public Paragraph(String paragraph) {
-        this.text = paragraph;
+    public Paragraph(String text) {
+        this.text = text;
     }
 
-    public void print(Paragraph paragraph) {
-        System.out.println("Paragraph: " + paragraph.text);
+    public void print() {
+        System.out.println( "Paragraph: " + text);
     }
 }
