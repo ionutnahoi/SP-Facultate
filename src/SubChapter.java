@@ -29,8 +29,8 @@ public class SubChapter {
     public void print() {
 //        return (this.name + "\n" + this.paragraphList.forEach(paragraph -> paragraph.print(paragraph)) + "\n" + this.imageList.forEach(image -> image.print(image)) + "\n" + this.tableList.forEach(table -> table.print(table)));
         System.out.println("Subchapter: " + this.name);
-        this.paragraphList.forEach(paragraph -> paragraph.print(paragraph));
-        this.imageList.forEach(image -> image.print(image));
-        this.tableList.forEach(table -> table.print(table));
+        this.paragraphList.forEach(Paragraph::print);
+        this.imageList.forEach(Image::print);
+        this.tableList.forEach(Table::print);
     }
 }
