@@ -1,4 +1,6 @@
-public class ImageProxy implements Element{
+import java.awt.*;
+
+public class ImageProxy implements Element,Picture{
 
     public Image realImage = null;
     public String src;
@@ -19,5 +21,15 @@ public class ImageProxy implements Element{
     public void print() {
         loadImage();
         realImage.print();
+    }
+
+    @Override
+    public String url() {
+        return null;
+    }
+
+    @Override
+    public Dimension dim() {
+        return null;
     }
 }

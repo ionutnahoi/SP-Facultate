@@ -1,6 +1,7 @@
+import java.awt.*;
 import java.util.concurrent.TimeUnit;
 
-public class Image implements Element{
+public class Image implements Element,Picture{
     private String imageName;
 
     public Image(String imageName) {
@@ -15,5 +16,15 @@ public class Image implements Element{
 
     public void print() {
         System.out.println( "Image: " + imageName);
+    }
+
+    @Override
+    public String url() {
+        return null;
+    }
+
+    @Override
+    public Dimension dim() {
+        return null;
     }
 }
