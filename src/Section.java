@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Section implements Element{
+public class Section implements Element {
     private String name;
     private List<Element> elements;
 
@@ -15,7 +15,16 @@ public class Section implements Element{
         System.out.println(name);
         elements.forEach(Element::print);
     }
-    public void add(Element element){
+
+    @Override
+    public void accept(Visitor visitor) {
+        visitor.visitSection(this);
+        for (Element el : elements) {
+            el.accept(visitor);
+        }
+    }
+
+    public void add(Element element) {
         elements.add(element);
     }
 

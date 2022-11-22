@@ -8,4 +8,9 @@ public class Table implements Element{
     public void print() {
         System.out.println( "Table:" + title );
     }
+
+    @Override
+    public void accept(Visitor visitor) {
+    visitor.visitTable(this);
+    }
 }

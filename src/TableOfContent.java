@@ -4,5 +4,10 @@ public class TableOfContent implements Element {
     public void print() {
 
     }
+
+    @Override
+    public void accept(Visitor visitor) {
+        visitor.visitTableOfContents(this);
+    }
 }
 

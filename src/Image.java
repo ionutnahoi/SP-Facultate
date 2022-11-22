@@ -1,7 +1,7 @@
 import java.awt.*;
 import java.util.concurrent.TimeUnit;
 
-public class Image implements Element,Picture{
+public class Image implements Element, Picture {
     private String imageName;
 
     public Image(String imageName) {
@@ -15,7 +15,12 @@ public class Image implements Element,Picture{
     }
 
     public void print() {
-        System.out.println( "Image: " + imageName);
+        System.out.println("Image: " + imageName);
+    }
+
+    @Override
+    public void accept(Visitor visitor) {
+        visitor.visitImage(this);
     }
 
     @Override
